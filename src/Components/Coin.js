@@ -1,8 +1,11 @@
 import React from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Coin = (props) => {
+  const navigate = useNavigate();
   return (
-    <div className="w-8/12 h-20 grid grid-cols-7 gap-x-4 items-center text-white border-b-2 border-white">
+    // grid grid-cols-7 col-auto gap-x-4 items-center text-white border-b-2 border-white
+    <div className="w-8/12 h-20 grid grid-cols-7 col-auto gap-x-4 items-center text-white border-b-2 border-white ">
       <img
         src={props.icon}
         alt={props.name}
@@ -14,7 +17,14 @@ const Coin = (props) => {
       <div className="">{props.price}</div>
       <p className="">{props.marketCap.toLocaleString()}</p>
       <p className="">{props.priceChange.toLocaleString()}</p>
-      <button className="">More Info</button>
+      <button
+        className="border-2 p-2 bg-indigo-500"
+        onClick={() => {
+          navigate(`/CoinPage/${props.id}`);
+        }}
+      >
+        More Info
+      </button>
     </div>
   );
 };
