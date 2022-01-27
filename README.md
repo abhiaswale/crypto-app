@@ -1,4 +1,4 @@
-#Crypto-App
+# Crypto-App
 An app made using ReactJs and Tailwind CSS. Users can search for various coins and view all the details about a coin. 
 
 ### Installing Dependencies
