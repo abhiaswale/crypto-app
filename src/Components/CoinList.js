@@ -32,7 +32,7 @@ const CoinList = () => {
   ));
 
   return (
-    <div>
+    <div className=" bg-gray-900">
       <h1 className="text-center text-white text-4xl p-8">
         Welcome to the CryptoChecker
       </h1>

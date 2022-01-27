@@ -5,7 +5,7 @@ import CoinPage from "./Components/CoinPage";
 
 function App() {
   return (
-    <div className="bg-gray-900">
+    <div className=" ">
       <Routes>
         <Route path="/" exact element={<CoinList />} />
         <Route path="/CoinPage/:id" element={<CoinPage />} />
