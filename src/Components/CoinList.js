@@ -4,6 +4,7 @@ import Coin from "./Coin";
 
 const CoinList = () => {
   const [coinsArray, setCoinsArray] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get(
@@ -11,6 +12,7 @@ const CoinList = () => {
       )
       .then((response) => {
         setCoinsArray(response.data);
+        setLoading(false);
       });
   }, []);
 
@@ -37,6 +39,11 @@ const CoinList = () => {
         Welcome to the CryptoChecker
       </h1>
       <div className="flex flex-col content-center items-center">
+        {loading && (
+          <h1 className="w-full h-screen text-3xl text-center text-white">
+            Loading...
+          </h1>
+        )}
         {filterCoin}
       </div>
     </div>
