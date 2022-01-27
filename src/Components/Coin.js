@@ -12,17 +12,16 @@ const Coin = (props) => {
       />
       <p className="uppercase  align-center">{props.id}</p>
       <span className="uppercase lg:inline hidden">{props.coinSymbol}</span>
-      <div className="">{props.price}</div>
-      <p className="lg:inline hidden">{props.marketCap.toLocaleString()}</p>
+      <div className="">${props.price}</div>
+      <p className="lg:inline hidden">${props.marketCap.toLocaleString()}</p>
       <p
-        className={`${
-          props.priceChange >= 0 ? "text-green-500" : "text-red-700"
-        }`}
+        className={`font-bold
+        ${props.priceChange >= 0 ? "text-green-500" : "text-red-700"}`}
       >
-        {props.priceChange.toLocaleString()}
+        {props.priceChange.toLocaleString()}%
       </p>
       <button
-        className="border-2 p-2 bg-indigo-500"
+        className="border-2 p-2 bg-indigo-500 rounded-xl"
         onClick={() => {
           navigate(`/CoinPage/${props.id}`);
         }}
