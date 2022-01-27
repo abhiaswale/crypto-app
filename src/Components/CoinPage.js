@@ -17,7 +17,7 @@ const CoinPage = () => {
         setCoin(response.data);
         setloading(false);
       });
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     console.log(coin);
@@ -29,10 +29,15 @@ const CoinPage = () => {
         className=" w-full h-screen bg-no-repeat bg-cover flex justify-center items-center"
         style={{ backgroundImage: `url(${image})` }}
       >
+        {loading && (
+          <h1 className="w-full h-screen text-3xl text-center text-white">
+            Loading...
+          </h1>
+        )}
         <div className=" flex flex-col justify-center items-center bg-black bg-opacity-80 w-1/3 rounded-xl p-8 text-white">
           <h1 className="uppercase text-6xl p-2 font-bold">{coin.id}</h1>
           <div className="flex flex-col w-28 p-2">
-            <img src={coin.image.large} />
+            <img src={coin.image.large} alt={"cryptoImg"} />
           </div>
           <div className="flex flex-col w-72 p-2">
             <div className="flex flex-row text-xl my-1">
@@ -63,12 +68,6 @@ const CoinPage = () => {
           <button className="border-2 p-2 bg-indigo-500 rounded-xl my-3">
             <Link to="/">Go Back</Link>
           </button>
-          {/* <div className="flex flex-row ">
-            <h1>Hi</h1>
-            <span>Where are you</span>
-          </div>
-          <div>012</div>
-          <div>0123</div> */}
         </div>
       </div>
     );
