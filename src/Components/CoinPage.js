@@ -19,10 +19,6 @@ const CoinPage = () => {
       });
   }, [id]);
 
-  useEffect(() => {
-    console.log(coin);
-  }, [coin]);
-
   if (coin) {
     return (
       <div
@@ -58,11 +54,15 @@ const CoinPage = () => {
             </div>
             <div className=" flex flex-row text-xl my-1">
               <h3 className="font-bold w-40">24hr High:</h3>
-              <p>${coin.market_data.high_24h.usd}</p>
+              <p className="text-green-500">
+                ${coin.market_data.high_24h.usd.toLocaleString()}
+              </p>
             </div>
             <div className=" flex flex-row text-xl my-1">
               <h3 className="font-bold w-40">24hr Low:</h3>
-              <p>${coin.market_data.low_24h.usd}</p>
+              <p className="text-red-700">
+                ${coin.market_data.low_24h.usd.toLocaleString()}
+              </p>
             </div>
           </div>
           <button className="border-2 p-2 bg-indigo-500 rounded-xl my-3">
