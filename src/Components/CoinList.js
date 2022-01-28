@@ -55,7 +55,7 @@ const CoinList = () => {
       <div className="flex flex-col content-center items-center">
         <input
           type="text"
-          className="lg:w-96 p-3 m-2 rounded-xl "
+          className="lg:w-96 p-3 m-2 rounded-xl w-9/12 "
           placeholder="Search for Coins"
           onChange={changeHandler}
         />

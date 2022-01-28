@@ -30,7 +30,7 @@ const CoinPage = () => {
             Loading...
           </h1>
         )}
-        <div className=" flex flex-col justify-center items-center bg-black bg-opacity-80 w-1/3 rounded-xl p-8 text-white">
+        <div className=" flex flex-col justify-center items-center bg-black bg-opacity-80 lg:w-1/3 w-min rounded-xl p-8 text-white">
           <h1 className="uppercase text-6xl p-2 font-bold">{coin.id}</h1>
           <div className="flex flex-col w-28 p-2">
             <img src={coin.image.large} alt={"cryptoImg"} />
